@@ -33,7 +33,7 @@ const Details = () => {
         <Spinner />
       </div>
     </>
-  ) : (
+  ) : window.innerWidth > 600 ? (
     <>
       <h1 className="center">{item[0].name}</h1>
       <div className="row">
@@ -52,6 +52,29 @@ const Details = () => {
           </ul>
         </div>
         <div className="container fluid col-5 h-4">
+          <img src={item[0].img} alt={item[0].name} className="img img-fluid" />
+        </div>
+      </div>
+    </>
+  ) : (
+    <>
+      <h1 className="center">{item[0].name}</h1>
+      <div className="row">
+        <div className=" col-12">
+          <ul>
+            <li className="mb-4">Date of Birth: {item[0].birthday}</li>
+            <li className="my-4">Occupation: {item[0].occupation[0]}</li>
+            <li className="my-4">Status: {item[0].status}</li>
+            <li className="my-4">Nickname: {item[0].nickname}</li>
+            <li className="my-4">
+              Seasons: {item[0].appearance[0]} to{" "}
+              {item[0].appearance[item[0].appearance.length - 1]}
+            </li>
+            <li className="my-4">Portrayed by: {item[0].portrayed}</li>
+            <li className="my-4">Quote: {quotes[0]?.quote || "None"}</li>
+          </ul>
+        </div>
+        <div className="container fluid col-12 h-4">
           <img src={item[0].img} alt={item[0].name} className="img img-fluid" />
         </div>
       </div>

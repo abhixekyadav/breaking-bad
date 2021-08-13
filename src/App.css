@@ -131,3 +131,12 @@ input[type="text"] {
     object-fit: contain;
   }
 }
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    height: 70px;
+    font-weight: bold;
+    font-size: 1.7rem;
+    text-align: center;
+  }
+}
